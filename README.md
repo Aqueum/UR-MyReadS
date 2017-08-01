@@ -6,9 +6,9 @@ https://www.udacity.com/course/react-nanodegree--nd019)
 
 # Purpose & design
 An assessed project, bookshelf app that allows you to select books and categorise them according to:
-1. read
-2. reading
-3. want to read
+1. Currently Reading
+2. Want to Read
+3. Read
 See the [project rubric](https://review.udacity.com/#!/rubrics/918/view) for detailed project requirements.
 
 # Getting Started
