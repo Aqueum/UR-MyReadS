@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+// eslint-disable-next-line
 import PropTypes from 'prop-types';
+// eslint-disable-next-line
 import * as BooksAPI from './BooksAPI';
 import './App.css';
 
