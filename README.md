@@ -18,9 +18,10 @@ See the [project rubric](https://review.udacity.com/#!/rubrics/918/view) for det
 4. Enter `git clone https://github.com/Aqueum/UR-MyReadS.git` to download the project directory
 5. Enter `cd UR-MyReadS` to open the project directory
 6. Enter `npm install` to set up the server
-7. Enter `npm start` to launch the server
-8. Browse to `localhost:3000` in your web browswer
-9. Enjoy
+7. Enter `npm install --save react-router-dom` to install React Router
+8. Enter `npm start` to launch the server
+9. Browse to `localhost:3000` in your web browswer
+10. Enjoy
 
 # Known issues
 ## Incomplete
