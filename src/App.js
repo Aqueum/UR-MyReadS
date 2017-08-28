@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 // eslint-disable-next-line
 import * as BooksAPI from './BooksAPI';
-import BookListing from './BookListing';
+import BookListings from './BookListings';
 import './App.css';
 
 class BooksApp extends Component {
@@ -49,27 +49,19 @@ class BooksApp extends Component {
                   <div className="bookshelf">
                     <h2 className="bookshelf-title">Currently Reading</h2>
                     <div className="bookshelf-books">
-                      <ol className="books-grid">
-                        <li>
-                          <BookListing />
-                        </li>
-                      </ol>
+                      <BookListings />
                     </div>
                   </div>
                   <div className="bookshelf">
                     <h2 className="bookshelf-title">Want to Read</h2>
                     <div className="bookshelf-books">
-                      <ol className="books-grid">
-                        <li />
-                      </ol>
+                      <BookListings />
                     </div>
                   </div>
                   <div className="bookshelf">
                     <h2 className="bookshelf-title">Read</h2>
                     <div className="bookshelf-books">
-                      <ol className="books-grid">
-                        <li />
-                      </ol>
+                      <BookListings />
                     </div>
                   </div>
                 </div>
