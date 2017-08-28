@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 // eslint-disable-next-line
 import * as BooksAPI from './BooksAPI';
 import BookListing from './BookListing';
@@ -18,8 +19,10 @@ class BooksApp extends Component {
   render() {
     return (
       <div className="app">
-        {this.state.showSearchPage
-          ? <div className="search-books">
+        <Route
+          path="/search"
+          render={() =>
+            <div className="search-books">
               <div className="search-books-bar">
                 <a
                   className="close-search"
@@ -42,8 +45,13 @@ class BooksApp extends Component {
               <div className="search-books-results">
                 <ol className="books-grid" />
               </div>
-            </div>
-          : <div className="list-books">
+            </div>}
+        />
+        <Route
+          exact
+          path="/"
+          render={() =>
+            <div className="list-books">
               <div className="list-books-title">
                 <h1>MyReads</h1>
               </div>
@@ -83,6 +91,7 @@ class BooksApp extends Component {
                 </a>
               </div>
             </div>}
+        />
       </div>
     );
   }
