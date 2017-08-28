@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import * as BooksAPI from './BooksAPI';
 import './App.css';
 
-class BookListing extends Component {
+class BookListings extends Component {
   static propTypes = {};
 
   render() {
