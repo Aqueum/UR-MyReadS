@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import BookListings from './BookListings';
-import escapeRegExp from 'escape-string-regexp';
 import * as BooksAPI from './BooksAPI';
 
 class BookSearch extends Component {
@@ -9,25 +8,17 @@ class BookSearch extends Component {
     books: [],
     query: ''
   };
-  componentDidUpdate() {
-    BooksAPI.getAll().then(books => {
-      this.setState({ books });
-    });
-  }
   updateQuery = query => {
     this.setState({ query: query.trim() });
   };
+  componentDidUpdate() {
+    BooksAPI.search('Art').then(books => {
+      this.setState({ books });
+    });
+  }
+
   render() {
     const { query, books } = this.state;
-    let showingBooks;
-    if (query) {
-      const match = new RegExp(escapeRegExp(query), 'i');
-      showingBooks = books.filter(
-        book => match.test(book.title) || match.test(book.authors)
-      );
-    } else {
-      showingBooks = books;
-    }
 
     return (
       <div className="search-books">
@@ -53,7 +44,7 @@ class BookSearch extends Component {
           </div>
         </div>
         <div className="search-books-results">
-          <BookListings books={showingBooks} />
+          <BookListings books={books} />
         </div>
       </div>
     );
