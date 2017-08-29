@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import BookListings from './BookListings';
 import escapeRegExp from 'escape-string-regexp';
-// import sortBy from 'sort-by';
+import sortBy from 'sort-by';
 import * as BooksAPI from './BooksAPI';
 
 class BookSearch extends Component {
@@ -29,6 +29,9 @@ class BookSearch extends Component {
     } else {
       showingBooks = books;
     }
+
+    showingBooks.sort(sortBy('title'));
+
     return (
       <div className="search-books">
         <div className="search-books-bar">
