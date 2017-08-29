@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // eslint-disable-next-line
 import * as BooksAPI from './BooksAPI';
 import './App.css';
-import escapeRegExp from 'escape-string-regexp';
+import BookShelfChanger from './BookShelfChanger';
 
 class BookListings extends Component {
   static propTypes = {
@@ -21,15 +21,6 @@ class BookListings extends Component {
       showingBooks = books;
     }
 
-    // }
-    // changeShelf = (book, shelf) => {
-    //   BooksAPI.update(book, shelf).then(books => {
-    //     this.setState({ books });
-    // };
-    // changeShelf function(event) {
-
-    // }
-
     return (
       <ol className="books-grid">
         {showingBooks.map(book =>
@@ -44,17 +35,7 @@ class BookListings extends Component {
                     backgroundImage: `url(${book.imageLinks.smallThumbnail})`
                   }}
                 />
-                <div className="book-shelf-changer">
-                  <select value={shelf} onChange={this.changeShelf}>
-                    <option value="none" disabled>
-                      Move to...
-                    </option>
-                    <option value="currentlyReading">Currently Reading</option>
-                    <option value="wantToRead">Want to Read</option>
-                    <option value="read">Read</option>
-                    <option value="none">None</option>
-                  </select>
-                </div>
+                <BookShelfChanger shelf={shelf} />
               </div>
               <div className="book-title">
                 {book.title}
