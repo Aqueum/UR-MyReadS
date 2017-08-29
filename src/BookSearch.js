@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import BookListings from './BookListings';
-// import escapeRegExp from 'escape-string-regexp';
+import escapeRegExp from 'escape-string-regexp';
 // import sortBy from 'sort-by';
 import * as BooksAPI from './BooksAPI';
 
@@ -19,8 +19,16 @@ class BookSearch extends Component {
     this.setState({ query: query.trim() });
   };
   render() {
-    const { books } = this.props;
-    const { query } = this.state;
+    const { books, query } = this.state;
+    let showingBooks;
+    if (query) {
+      const match = new RegExp(escapeRegExp(query), 'i');
+      showingBooks = books.filter(
+        book => match.test(book.title) || match.test(book.authors)
+      );
+    } else {
+      showingBooks = books;
+    }
     return (
       <div className="search-books">
         <div className="search-books-bar">
@@ -45,7 +53,7 @@ class BookSearch extends Component {
           </div>
         </div>
         <div className="search-books-results">
-          <BookListings books={this.state.books} />
+          <BookListings books={showingBooks} />
         </div>
       </div>
     );
