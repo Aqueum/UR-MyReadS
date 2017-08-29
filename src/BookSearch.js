@@ -15,40 +15,13 @@ class BookSearch extends Component {
       this.setState({ books });
     });
   }
-  //   componentDidMount() {
-  //     BooksAPI.search(query, 100).then(books => {
-  //       this.setState({ books });
-  //     });
-  //   }
   updateQuery = query => {
     this.setState({ query: query.trim() });
   };
   render() {
     const { books } = this.props;
     const { query } = this.state;
-    // let showingBooks;
-    // if (query) {
-    //   const match = new RegExp(escapeRegExp(query), 'i');
-    //   showingBooks = books.filter(book => match.test(book.name));
-    // } else {
-    //   showingBooks = books;
-    // }
-
-    // showingBooks.sort(sortBy('name'));
-
     return (
-      // state = {
-      //     books: [],
-      //     query: ''
-      //   }
-      //   let showingBooks;
-      //   const { query } = this.state;
-      //   if (query) {
-      //     const match = new RegExp(escapeRegExp(query), 'i');
-      //     showingBooks = books.filter(book => match.test(book.name));
-      //   } else {
-      //     showingBooks = books;
-      //   }
       <div className="search-books">
         <div className="search-books-bar">
           <Link to="/" className="close-search">

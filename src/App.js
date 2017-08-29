@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Bookshelves from './Bookshelves';
 import BookSearch from './BookSearch';
+import './App.css';
 
 class BooksApp extends Component {
   render() {
