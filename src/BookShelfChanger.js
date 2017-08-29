@@ -5,6 +5,9 @@ class BookShelfChanger extends Component {
   static propTypes = {
     shelf: PropTypes.string.isRequired
   };
+  changeShelf = something => {
+    console.log('state is changing');
+  };
   render() {
     const { shelf } = this.props;
     return (
