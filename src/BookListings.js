@@ -12,14 +12,19 @@ class BookListings extends Component {
   };
 
   render() {
-    const { books } = this.props;
+    const { books, shelf } = this.props;
     // const { query } = this.state;
     let showingBooks;
     // if (query) {
     //   const match = new RegExp(escapeRegExp(query), 'i');
     //   showingBooks = books.filter(book => match.test(book.name));
     // } else {
-    showingBooks = books;
+    if (shelf) {
+      showingBooks = books.filter(book => book.shelf === shelf);
+    } else {
+      showingBooks = books;
+    }
+
     // }
 
     return (
