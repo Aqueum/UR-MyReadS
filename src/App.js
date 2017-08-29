@@ -19,7 +19,7 @@ class BooksApp extends Component {
     return (
       <div className="app">
         <Route exact path="/" render={() => <Bookshelves books={books} />} />
-        <Route path="/search" render={() => <BookSearch books={books} />} />
+        <Route path="/search" render={() => <BookSearch />} />
       </div>
     );
   }
