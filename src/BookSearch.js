@@ -45,7 +45,6 @@ class BookSearch extends Component {
           </div>
         </div>
         <div className="search-books-results">
-          {JSON.stringify(this.state)}
           <BookListings books={this.state.books} />
         </div>
       </div>
