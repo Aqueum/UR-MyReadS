@@ -8,7 +8,7 @@ import escapeRegExp from 'escape-string-regexp';
 
 class BookListings extends Component {
   static propTypes = {
-    books: propTypes.array.isRequired
+    books: PropTypes.array.isRequired
   };
 
   render() {
