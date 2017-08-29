@@ -9,7 +9,7 @@ class BookSearch extends Component {
     books: [],
     query: ''
   };
-  componentDidMount() {
+  componentDidUpdate() {
     BooksAPI.getAll().then(books => {
       this.setState({ books });
     });
