@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import sortBy from 'sort-by';
 // import * as BooksAPI from './BooksAPI';
 import BookShelfChanger from './BookShelfChanger';
 
@@ -17,6 +18,8 @@ class BookListings extends Component {
     } else {
       showingBooks = books;
     }
+
+    showingBooks.sort(sortBy('title'));
 
     return (
       <ol className="books-grid">
