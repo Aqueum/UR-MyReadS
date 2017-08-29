@@ -6,8 +6,14 @@ import BookListings from './BookListings';
 import './App.css';
 
 class BooksApp extends Component {
-  state = {};
-
+  state = {
+    books: []
+  };
+  componentDidMount() {
+    BooksAPI.getAll().then(contacts => {
+      this.setState({ contacts });
+    });
+  }
   render() {
     return (
       <div className="app">
