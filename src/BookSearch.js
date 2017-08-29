@@ -7,12 +7,12 @@ class BookSearch extends Component {
   state = {
     books: [],
     query: ''
-//   };
-//   componentDidMount() {
-//     BooksAPI.search(query, 100).then(books => {
-//       this.setState({ books });
-//     });
-//   }
+  };
+  //   componentDidMount() {
+  //     BooksAPI.search(query, 100).then(books => {
+  //       this.setState({ books });
+  //     });
+  //   }
   render() {
     return (
       // state = {
