@@ -3,23 +3,18 @@ import { Link } from 'react-router-dom';
 import BookListings from './BookListings';
 import escapeRegExp from 'escape-string-regexp';
 import sortBy from 'sort-by';
-import * as BooksAPI from './BooksAPI';
+// import * as BooksAPI from './BooksAPI';
 
 class BookSearch extends Component {
   state = {
-    books: [],
     query: ''
   };
-  componentDidMount() {
-    BooksAPI.getAll().then(books => {
-      this.setState({ books });
-    });
-  }
   updateQuery = query => {
     this.setState({ query: query.trim() });
   };
   render() {
-    const { books, query } = this.state;
+    const { books } = this.props;
+    const { query } = this.state;
     let showingBooks;
     if (query) {
       const match = new RegExp(escapeRegExp(query), 'i');

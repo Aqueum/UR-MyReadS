@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import BookListings from './BookListings';
-import * as BooksAPI from './BooksAPI';
+// import * as BooksAPI from './BooksAPI';
 
 const shelfNames = [
   {
@@ -19,16 +19,8 @@ const shelfNames = [
 ];
 
 class Bookshelves extends Component {
-  state = {
-    books: []
-  };
-  componentDidMount() {
-    BooksAPI.getAll().then(books => {
-      this.setState({ books });
-    });
-  }
-
   render() {
+    const { books } = this.props;
     return (
       <div className="list-books">
         <div className="list-books-title">
@@ -41,7 +33,7 @@ class Bookshelves extends Component {
                 {shelfName.human}
               </h2>
               <div className="bookshelf-books">
-                <BookListings books={this.state.books} shelf={shelfName.mac} />
+                <BookListings books={books} shelf={shelfName.mac} />
               </div>
             </div>
           )}
