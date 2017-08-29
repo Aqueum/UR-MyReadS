@@ -14,17 +14,19 @@ class BookListings extends Component {
 
   render() {
     const { books, shelf } = this.props;
-    // const { query } = this.state;
     let showingBooks;
-    // if (query) {
-    //   const match = new RegExp(escapeRegExp(query), 'i');
-    //   showingBooks = books.filter(book => match.test(book.name));
-    // } else {
     if (shelf) {
       showingBooks = books.filter(book => book.shelf === shelf);
     } else {
       showingBooks = books;
     }
+
+    // }
+    // changeShelf = (book, shelf) => {
+    //   BooksAPI.update(book, shelf).then(books => {
+    //     this.setState({ books });
+    // };
+    // changeShelf function(event) {
 
     // }
 
@@ -43,7 +45,7 @@ class BookListings extends Component {
                   }}
                 />
                 <div className="book-shelf-changer">
-                  <select value={shelf}>
+                  <select value={shelf} onChange={this.changeShelf}>
                     <option value="none" disabled>
                       Move to...
                     </option>
