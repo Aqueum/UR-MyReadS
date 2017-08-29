@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-// eslint-disable-next-line
-import BookListings from './BookListings';
 import Bookshelves from './Bookshelves';
 import BookSearch from './BookSearch';
-import './App.css';
 
 class BooksApp extends Component {
   render() {
