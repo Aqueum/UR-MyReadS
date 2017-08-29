@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-// eslint-disable-next-line
 import PropTypes from 'prop-types';
-// eslint-disable-next-line
 import * as BooksAPI from './BooksAPI';
 import './App.css';
 import BookShelfChanger from './BookShelfChanger';
@@ -35,7 +33,7 @@ class BookListings extends Component {
                     backgroundImage: `url(${book.imageLinks.smallThumbnail})`
                   }}
                 />
-                <BookShelfChanger shelf={shelf} />
+                <BookShelfChanger book={book} />
               </div>
               <div className="book-title">
                 {book.title}
