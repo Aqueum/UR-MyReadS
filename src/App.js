@@ -10,8 +10,8 @@ class BooksApp extends Component {
     books: []
   };
   componentDidMount() {
-    BooksAPI.getAll().then(contacts => {
-      this.setState({ contacts });
+    BooksAPI.getAll().then(books => {
+      this.setState({ books });
     });
   }
   render() {
@@ -55,19 +55,19 @@ class BooksApp extends Component {
                   <div className="bookshelf">
                     <h2 className="bookshelf-title">Currently Reading</h2>
                     <div className="bookshelf-books">
-                      <BookListings />
+                      <BookListings books={this.state.books} />
                     </div>
                   </div>
                   <div className="bookshelf">
                     <h2 className="bookshelf-title">Want to Read</h2>
                     <div className="bookshelf-books">
-                      <BookListings />
+                      <BookListings books={this.state.books} />
                     </div>
                   </div>
                   <div className="bookshelf">
                     <h2 className="bookshelf-title">Read</h2>
                     <div className="bookshelf-books">
-                      <BookListings />
+                      <BookListings books={this.state.books} />
                     </div>
                   </div>
                 </div>
