@@ -7,7 +7,9 @@ import './App.css';
 import escapeRegExp from 'escape-string-regexp';
 
 class BookListings extends Component {
-  static propTypes = {};
+  static propTypes = {
+    books: propTypes.array.isRequired
+  };
 
   render() {
     const { books } = this.props;
