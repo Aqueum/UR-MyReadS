@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import sortBy from 'sort-by';
 // import * as BooksAPI from './BooksAPI';
-import BookShelfChanger from './BookShelfChanger';
+import BookMove from './BookMove';
 
 class BookListings extends Component {
   static propTypes = {
@@ -23,7 +23,7 @@ class BookListings extends Component {
 
     return (
       <ol className="books-grid">
-        {showingBooks.map(book =>
+        {showingBooks.map(book => (
           <li key={book.id}>
             <div className="book">
               <div className="book-top">
@@ -35,17 +35,13 @@ class BookListings extends Component {
                     backgroundImage: `url(${book.imageLinks.smallThumbnail})`
                   }}
                 />
-                <BookShelfChanger book={book} />
+                <BookMove book={book} />
               </div>
-              <div className="book-title">
-                {book.title}
-              </div>
-              <div className="book-authors">
-                {book.authors}
-              </div>
+              <div className="book-title">{book.title}</div>
+              <div className="book-authors">{book.authors}</div>
             </div>
           </li>
-        )}
+        ))}
       </ol>
     );
   }

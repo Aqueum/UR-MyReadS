@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
+import * as BooksAPI from './BooksAPI';
 // import PropTypes from 'prop-types';
 
-class BookShelfChanger extends Component {
+class BookMove extends Component {
   changeShelf = something => {
-    console.log('state is changing');
+    console.log('hmm');
   };
   render() {
     const { book } = this.props;
     const shelf = book.shelf;
     return (
       <div className="book-shelf-changer">
-        <select value={shelf} onChange={this.changeShelf}>
+        <select value={shelf} onChange={event => BooksAPI.update(book, shelf)}>
           <option value="none" disabled>
             Move to...
           </option>
@@ -24,4 +25,4 @@ class BookShelfChanger extends Component {
   }
 }
 
-export default BookShelfChanger;
+export default BookMove;
