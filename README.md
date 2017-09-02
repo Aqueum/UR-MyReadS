@@ -27,6 +27,8 @@ See the [project rubric](https://review.udacity.com/#!/rubrics/918/view) for det
 ## requires react router install
 Despite the rubric requirement that the application requires only `npm install` and `npm start` to launch, I have used React Router (which may reqire installation, as listed above).  It is assumed that Udacity staff would weigh in in [this slack discussion](https://udacity-react.slack.com/archives/C5T2LCD53/p1503956702000051?thread_ts=1501879113.502743&cid=C5T2LCD53) if this is not permitted.
 
+Since we're installing react router, we may as well install escape-string-regexp and sort-by too...
+
 ## Incomplete
 Work in progress
 
